@@ -32,6 +32,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
       <a href="#beneficios">Benefícios</a>
+      <a href="#orcamento">Preços</a>
       <a href="#localizacao">Localização</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -48,6 +49,7 @@
   <a href="#sobre">Sobre</a>
   <a href="#servicos">Serviços</a>
   <a href="#beneficios">Benefícios</a>
+  <a href="#orcamento">Orçamento</a>
   <a href="#localizacao">Localização</a>
   <a href="#faq">FAQ</a>
   <a href="https://wa.me/message/A3NLXVATGXRLJ1" target="_blank" rel="noopener" class="mobile-cta">💬 Falar no WhatsApp</a>
@@ -367,7 +369,7 @@
         <h3>Aulas Teóricas</h3>
         <p>Conteúdo claro, didática moderna e material atualizado pra você passar na prova com folga.</p>
         <div class="service-categories">
-          <span class="cat-pill">PRESENCIAL</span>
+          <span class="cat-pill">ONLINE</span>
         </div>
       </div>
 
@@ -463,6 +465,168 @@
         <h4>Processo ágil</h4>
         <p>Pouca burocracia, muita agilidade para você dirigir o quanto antes.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ORÇAMENTO DINÂMICO
+============================================ -->
+<section class="orcamento reveal" id="orcamento">
+  <div class="section-inner">
+    <div class="section-eyebrow">Orçamento rápido</div>
+    <h2 class="section-title">Monte seu pacote<br>e veja o <span class="gold">valor agora.</span></h2>
+    <p class="section-desc">
+      Escolha a categoria e a quantidade de aulas práticas. Todos os pacotes já incluem aluguel do veículo e certificado — sem surpresas no final.
+    </p>
+
+    <div class="orcamento-grid">
+
+      <!-- FORMULÁRIO -->
+      <div class="orcamento-form">
+
+        <!-- Passo 1: Nome -->
+        <div class="form-group">
+          <label class="form-label" for="orcNome">
+            <span class="form-step">01</span>
+            Seu nome (para a mensagem)
+          </label>
+          <input
+            type="text"
+            id="orcNome"
+            class="form-input"
+            placeholder="Ex: Maria Silva"
+            autocomplete="given-name"
+            maxlength="60"
+          />
+        </div>
+
+        <!-- Passo 2: Categoria -->
+        <div class="form-group">
+          <span class="form-label">
+            <span class="form-step">02</span>
+            Categoria desejada
+          </span>
+          <div class="toggle-group" role="radiogroup" aria-label="Categoria">
+            <label class="toggle-card">
+              <input type="radio" name="categoria" value="A" hidden>
+              <div class="toggle-card-inner">
+                <span class="toggle-icon">🏍️</span>
+                <span class="toggle-title">Categoria A</span>
+                <span class="toggle-sub">Motocicleta</span>
+              </div>
+            </label>
+            <label class="toggle-card">
+              <input type="radio" name="categoria" value="B" hidden>
+              <div class="toggle-card-inner">
+                <span class="toggle-icon">🚗</span>
+                <span class="toggle-title">Categoria B</span>
+                <span class="toggle-sub">Automóvel</span>
+              </div>
+            </label>
+            <label class="toggle-card">
+              <input type="radio" name="categoria" value="AB" hidden>
+              <div class="toggle-card-inner">
+                <span class="toggle-icon">🏍️ - 🚗</span>
+                <span class="toggle-title">Categoria AB</span>
+                <span class="toggle-sub">Motocicleta e Automóvel</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 3: Quantidade -->
+        <div class="form-group">
+          <span class="form-label">
+            <span class="form-step">03</span>
+            Quantidade de aulas práticas
+          </span>
+          <div class="qty-group" role="radiogroup" aria-label="Quantidade de aulas">
+            <label class="qty-btn">
+              <input type="radio" name="quantidade" value="2" hidden>
+              <div class="qty-card">
+                <span class="qty-label">2 aulas</span>
+                <span class="qty-tag popular">-</span>
+              </div>
+            </label>
+            <label class="qty-btn">
+              <input type="radio" name="quantidade" value="5" hidden>
+              <div class="qty-card">
+                <span class="qty-label">5 aulas</span>
+                <span class="qty-tag popular">Popular</span>
+              </div>
+            </label>
+            <label class="qty-btn">
+              <input type="radio" name="quantidade" value="10" hidden>
+              <div class="qty-card">
+                <span class="qty-label">10 aulas</span>
+                <span class="qty-tag best">Melhor custo</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <!-- /FORMULÁRIO -->
+
+      <!-- RESULTADO DINÂMICO -->
+      <div class="orcamento-result">
+
+        <!-- Estado: aguardando seleção -->
+        <div class="result-placeholder" id="resultPlaceholder">
+          <div class="placeholder-icon">💰</div>
+          <p>Selecione a categoria e a quantidade de aulas para ver o valor do pacote.</p>
+        </div>
+
+        <!-- Estado: resultado calculado -->
+        <div class="result-card" id="resultCard" style="display:none;">
+
+          <span class="result-category-badge" id="resultBadge">–</span>
+
+          <div class="result-price-wrap">
+            <span class="result-price-label">Valor do pacote</span>
+            <span class="result-price" id="resultPreco" data-current="0">R$ 0,00</span>
+          </div>
+
+          <ul class="result-inclusions">
+            <li><span class="check">✓</span> <strong id="resultAulas">– aulas práticas</strong></li>
+            <li><span class="check">✓</span> Aluguel do veículo incluso</li>
+            <li><span class="check">✓</span> Certificado de conclusão incluso</li>
+            <li><span class="check">✓</span> Acompanhamento do instrutor</li>
+          </ul>
+
+          <!-- Loading state (Google Sheets) -->
+          <div class="result-loading" id="resultLoading" style="display:none;">
+            <div class="spinner"></div>
+            <span>Consultando tabela de preços...</span>
+          </div>
+
+          <!-- Botão WhatsApp -->
+          <button
+            class="wa-btn"
+            id="waBtn"
+            type="button"
+            disabled
+            aria-label="Enviar orçamento para WhatsApp"
+          >
+            <span class="wa-icon">💬</span>
+            <span class="wa-text">
+              <strong>Enviar Orçamento para o WhatsApp</strong>
+              <small>Confirmar com a autoescola agora</small>
+            </span>
+            <span class="wa-arrow">→</span>
+          </button>
+
+          <p class="result-disclaimer">
+            * Valores sujeitos a confirmação. Condições de pagamento na matrícula.
+          </p>
+
+        </div>
+        <!-- /result-card -->
+
+      </div>
+      <!-- /RESULTADO -->
+
     </div>
   </div>
 </section>
@@ -737,6 +901,7 @@
         <li><a href="#sobre">Sobre nós</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
